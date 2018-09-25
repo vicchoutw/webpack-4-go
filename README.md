@@ -1,2 +1,2 @@
 # webpack-4-go
-Tutorial of webpack
+tutorial of webpack4
