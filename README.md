@@ -24,17 +24,25 @@ Webpack優點如下：
 1. 安裝node 8.x版，範例使用8.8.0版
 [下載連結](https://nodejs.org/en/download/)
 
+</br>
+
 2. 開啟命令提示方塊輸入指令，Mac則開啟Terminal檢查安裝後node版本號
 ```
  node -v //顯示v8.8.0
 ```
+
+</br>
 
 3. 安裝全域webpack
 ```
  npm i -g webpack
 ```
 
+</br>
+
 4. 資料夾準備
 
+![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/file.png)
 
+</br>
 
