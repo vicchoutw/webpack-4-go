@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --inline",
+    "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --inline --hot",
     "build": "webpack"
   },
   "repository": {
