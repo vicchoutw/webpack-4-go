@@ -53,6 +53,7 @@ Webpack優點如下：
 
 ### npm安裝套件
 
+</br>
 
 #### 在安裝之前，先了解npm套件安裝常用指令：
 
@@ -82,13 +83,15 @@ devDependencies": {
 }
 ```
 
+</br>
+
 #### 安裝Webpack
 
 1. 全域安裝`webpack`，`webpack-cli`，`webpack-dev-server` 三個套件
 ```
  npm i -g webpack webpack-cli webpack-dev-server
 ```
-> _第一次使用Webpack需全域安裝，之後則免再安裝
+> _第一次使用Webpack需全域安裝，之後則免再安裝_
 
 </br>
 
@@ -98,6 +101,32 @@ devDependencies": {
 ```
 
 </br>
+
+3. 修改package.json的`"scripts"`如下
+```
+"scripts": {
+  "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --inline --hot",
+  "build": "webpack"
+}
+```
+
+</br>
+
+"dev"主要為開發階段使用
+* `webpack-dev-server` 開啟本機伺服器來檢視網頁
+* `--devtool eval-source-map` 可開啟sourceMap方便調試程式碼
+* `--progress` 顯示進度條
+* `--colors` 高亮顏色顯示特殊訊息
+* `--inline` 網頁加入熱塊，程式碼異動後自動重整網頁
+* `--hot` 重新加載改變的部分，不会重整頁面
+* `--inline --hot` 同時存在為重新加載改變的部份，HRM失敗則重整頁面
+
+</br>
+
+"build"為輸出階段使用
+* 打包輸出網頁，並存放在`dist`資料夾內
+
+
 
 
 
