@@ -32,24 +32,48 @@ Webpack優點如下：
 2. 開啟命令提示方塊輸入指令，Mac則開啟Terminal檢查安裝後node版本號
 ```
  node -v //顯示v8.8.0，
- npm i
 ```
 
 </br>
 
-全域安裝 `-global` 縮寫 `-g`，儲存在電腦本機中，其他專案皆可使用
+3. 資料夾準備
+
+![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/file.png)
+> _webpack.config.js為webpack設定檔預設命名，無特殊需求建議不要改。_
+
+</br>
+
+4. 建制package.json檔
+```
+ npm init
+```
+> _一路Enter到底後，會發現專案目錄下產生了package.json檔_
+
+</br>
+
+### npm安裝套件
+
+
+#### 在安裝之前，先了解npm套件安裝常用指令：
+
+1. 安裝 `install` 縮寫 `i`:
+```
+ npm i pluginName
+```
+
+</br>
+
+2. 全域安裝 `-global` 縮寫 `-g`，儲存在電腦本機中，所有專案皆可使用
 ```
  npm i -g pluginName
 ```
 
 </br>
 
-安裝到專案目錄下並寫入package.json，於專案目錄下產生node_modules資料夾存放套件檔案： `--save-dev` 縮寫 `-D`
+3. 安裝到專案目錄下並寫入package.json，於專案目錄下產生node_modules資料夾存放套件檔案： `--save-dev` 縮寫 `-D`
 ```
  npm i -D pluginName
 ```
-
-</br>
 
 安裝後會發現package.json中的`"devDependencies"`記錄了套件名稱與版本
 ```
@@ -57,6 +81,24 @@ devDependencies": {
   "jquery": "^3.3.1"
 }
 ```
+
+#### 安裝Webpack
+
+1. 全域安裝`webpack`，`webpack-cli`，`webpack-dev-server` 三個套件
+```
+ npm i -g webpack webpack-cli webpack-dev-server
+```
+> _第一次使用Webpack需全域安裝，之後則免再安裝
+
+</br>
+
+2. 專案目錄下安裝`webpack`，`webpack-cli`，`webpack-dev-server` 三個套件
+```
+ npm i -D webpack webpack-cli webpack-dev-server
+```
+
+</br>
+
 
 
 
