@@ -31,21 +31,33 @@ Webpack優點如下：
 
 2. 開啟命令提示方塊輸入指令，Mac則開啟Terminal檢查安裝後node版本號
 ```
- node -v //顯示v8.8.0
+ node -v //顯示v8.8.0，
+ npm i
 ```
 
 </br>
 
-3. 安裝全域webpack
+全域安裝 `-global` 縮寫 `-g`，儲存在電腦本機中，其他專案皆可使用
 ```
- npm i -g webpack
+ npm i -g pluginName
 ```
 
 </br>
 
-4. 資料夾準備
-
-![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/file.png)
+安裝到專案目錄下並寫入package.json，於專案目錄下產生node_modules資料夾存放套件檔案： `--save-dev` 縮寫 `-D`
+```
+ npm i -D pluginName
+```
 
 </br>
+
+安裝後會發現package.json中的`"devDependencies"`記錄了套件名稱與版本
+```
+devDependencies": {
+  "jquery": "^3.3.1"
+}
+```
+
+
+
 
