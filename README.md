@@ -77,7 +77,7 @@ Webpack優點如下：
 ```
 
 安裝後會發現package.json中的`"devDependencies"`記錄了套件名稱與版本
-```
+```javascript
 devDependencies": {
   "jquery": "^3.3.1"
 }
@@ -103,7 +103,7 @@ devDependencies": {
 </br>
 
 3. 修改package.json的`"scripts"`如下
-```
+```javascript
 "scripts": {
   "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --inline --hot",
   "build": "webpack"
@@ -152,7 +152,7 @@ Loader:
 </br>
 
 #### Webpack.config 配置如下：
-```
+```javascript
 const path = require('path');
 //套件加載
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -294,6 +294,55 @@ console.log('test Entry.js!!');
 ```
 
 可以看到entry.js中除了可以引用js / css檔案外也能自定義任務，譬如可以在terminal中打印console.log
+
+</br>
+
+
+### 啟用devServer並開始開發
+
+由於在package.json中有設定：
+```jsvascript
+"scripts": {
+  "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --inline --hot",
+  "build": "webpack"
+}
+```
+
+啟用webpack時，如果於開發階段則輸入 `npm run dev`，打包輸出階段則輸入 `npm run build`。
+啟動webpack後會看所有webpack bundle過程中訊息（webpack4 相較舊版本速度提升不少）
+
+在webpack.config中可定義devServer配置參數，如下：
+```javascript
+devServer: {
+    //顯示警告or錯誤訊息
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    //每次bundle結束後自動開啟頁面
+    open: true,
+    //開啟的頁面名稱
+    openPage: 'index.html',
+    compress: true,
+    //是否持續監聽指定目錄下所有檔案異動
+    watchContentBase: true,
+    //監聽指定目錄名稱
+    contentBase: path.join(__dirname, './resources/global/'),
+    port: 3000
+  }
+```
+</br>
+
+檔案有異動時，webpack會監聽並重新做bundle動作並且自動重新整理頁面。
+預設網址為：http://localhost:3000/
+
+***
+
+以上為webpack基本介紹與配置設定！ 感謝！
+</br>
+未完..待續
+
+
 
 
 
