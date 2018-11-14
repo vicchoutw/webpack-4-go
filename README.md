@@ -126,6 +126,175 @@ devDependencies": {
 "build"為輸出階段使用
 * 打包輸出網頁，並存放在`dist`資料夾內
 
+</br>
+
+### Webpack.config.js設定
+
+</br>
+
+Webpack.config.js檔案中設定整個Webpack流程參數。
+Webpack的處理流程中一切皆為Javascript語言，譬如Scss檔案再轉譯階段需要透過不同的Loader作轉換，最後輸出為css檔案。
+詳細說明可參考 [Loader](https://webpack.docschina.org/concepts/loaders/)
+此外，也可以透過Plugins協助開發者做更多的Bundle處理。
+
+</br>
+
+範例中使用的Plugins：
+* [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)： 複製或搬移資料夾功能
+* [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)： 於Html文檔中自動補上bundle的檔案（css / js)等等
+* [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)： 移除資料夾
+* [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)： 打包Scss檔案成一隻css檔並透過 HtmlWebpackPlugin加載到Html中
+
+Loader:
+* [Babel-Loader](https://github.com/babel/babel-loader)： ES6轉譯
+* [Eslint-Loader](https://github.com/webpack-contrib/eslint-loader)： 程式碼偵錯
+
+</br>
+
+#### Webpack.config 配置如下：
+```
+const path = require('path');
+//套件加載
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+//設定CleanWebpackPlugin參數
+let cleanFolderInit = {
+  //清除目錄名稱
+  target: [
+    'build',
+    'dist'
+  ],
+  //配置選項
+  options: {
+    root: path.resolve('./'),
+    verbose: true,
+    // exclude: ['*.html']
+  }
+}
+
+module.exports = {
+  // Webpack模式，目前設定為development
+  mode: 'development',
+  // 流程入口位置
+  entry: {
+    main: './resources/global/entry.js'
+  },
+  // 輸出位置，filename定義輸出的js檔名
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'build.js'
+  },
+  module: {
+    //設定每個Loader配置
+    rules: [
+      {
+        //Eslint-Loader
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'eslint-loader',
+        options: {
+          emitError: true,
+        }
+      },
+      {
+        //Babel-Loader
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [require('@babel/plugin-proposal-object-rest-spread')]
+          }
+        }
+      },
+      {
+        // Sass-loader + css-loader
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ],
+      }
+    ]
+  },
+  //設定每個Plugins配置
+  plugins: [
+    //每次webpack bundle前先行移除資料夾
+    new CleanWebpackPlugin(
+      cleanFolderInit.target,
+      cleanFolderInit.options
+    ),
+    //每次webpack bundle前先行複製or移動資料夾
+    new CopyWebpackPlugin([
+      {
+        from: './resources/global/images/',
+        to: './images/',
+        //是否強制覆蓋
+        force: true
+      }
+    ]),
+    //打包Sass檔案，並透過Sass / Css loader最後輸出成css檔
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    //自動加載css / js檔案並重新建置html檔案
+    new HtmlWebpackPlugin({
+      chunks: ['main'],
+      filename: 'index.html',
+      template: path.resolve(__dirname, './resources/global/index.html'),
+      inject: true
+    }),
+  ],
+  //localHost server配置
+  devServer: {
+    //顯示警告or錯誤訊息
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    //每次bundle結束後自動開啟頁面
+    open: true,
+    //開啟的頁面名稱
+    openPage: 'index.html',
+    compress: true,
+    //是否持續監聽指定目錄下所有檔案異動
+    watchContentBase: true,
+    //監聽指定目錄名稱
+    contentBase: path.join(__dirname, './resources/global/'),
+    port: 3000
+  }
+};
+```
+</br>
+
+entry中指向的檔案為主要的檔案配置，簡單說就是整個專案中哪些檔案是要被使用的。
+
+```
+// 流程入口位置
+  entry: {
+    main: './resources/global/entry.js'
+  },
+```
+
+#### entry.js中的配置
+
+```
+require('jquery');
+require('./sass/common.scss');
+require('./js/index.js');
+console.log('test Entry.js!!');
+
+```
+
+可以看到entry.js中除了可以引用js / css檔案外也能自定義任務，譬如可以在terminal中打印console.log
+
 
 
 
