@@ -77,7 +77,7 @@ Webpack優點如下：
 ```
 
 安裝後會發現package.json中的`"devDependencies"`記錄了套件名稱與版本
-```javascript
+```
 devDependencies": {
   "jquery": "^3.3.1"
 }
