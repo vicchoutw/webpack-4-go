@@ -137,7 +137,7 @@ Webpack.config.js檔案中設定整個Webpack流程參數，並透過`module.exp
 以下介紹幾個Webpack.config.js重要的設定:
 
 </br>
-####entry
+#### entry
 在一開始階段需定義入口（讀取的設定檔案來源） `entry: string|Array<string>`
 
 ```javascript
@@ -158,9 +158,9 @@ module.exports = {
 ```
 
 </br>
-####output
+#### output
 
-有輸入`entry`相對就有輸出`output`，定義webpack把bundle後的檔案輸出到的目錄位置
+有輸入`entry`相對就有輸出`output`，定義webpack把bundle後的檔案輸出到的目錄位置
 
 ```javascript
 module.exports = {
@@ -177,7 +177,7 @@ module.exports = {
 * `path` 輸出目錄的絕對路徑，可搭配`path.resolve()`方法將相對路徑轉為絕對路徑，[請參閱](http://javascript.ruanyifeng.com/nodejs/path.html)
 
 </br>
-####loader
+#### loader
 
 Webpack的處理流程中皆為Javascript語言，非javascript的原始碼無法正確的在bundle階段做使用。Loader主要在於把不同的原始碼作轉換，譬如Scss源碼可透過Sass-loader / Css-loader輸出為css檔案。Loader詳細說明，[請參閱](https://webpack.docschina.org/concepts/loaders/)
 
@@ -188,7 +188,7 @@ Webpack的處理流程中皆為Javascript語言，非javascript的原始碼無�
 npm i -D style-loader css-loader
 ```
 </br>
-使用Loader可以透過下列三種方式：
+使用Loader可以透過下列三種方式：
 
 ##### 1. webpack.config.js中設定（推荐）： 
 
@@ -284,8 +284,8 @@ module: {
   ]
 }
 ```
-</br>
-####plugins
+</br>
+#### plugins
 
 同其他自動化流程，更多的特殊需伽可以透過插件來達成。主要用於處理loader無法完成的事項。
 範例中使用的Plugins：
