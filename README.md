@@ -315,7 +315,6 @@ module: {
 npm i -D pluginName
 ```
 </br>
-
 推薦使用的Plugins：
 * [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)： 複製或搬移資料夾功能
 
@@ -340,7 +339,6 @@ module.exports = {
 }
 ```
 </br>
-
 * [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)： 於Html文檔中自動加載bundle後的檔案（css / js)等等
 ```javascript
 //套件加載
@@ -361,7 +359,6 @@ module.exports = {
 }
 ```
 </br>
-
 * [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)： 移除資料夾
 
 ```javascript
@@ -398,7 +395,6 @@ module.exports = {
 }
 ```
 </br>
-
 * [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)： 打包Scss檔案成一隻css檔並透過 HtmlWebpackPlugin加載到Html中
 > 前身為 `ExtractTextPlugin`。Webpack4後不支援，[請參閱](https://webpack.js.org/plugins/mini-css-extract-plugin/)
 
@@ -421,9 +417,7 @@ module.exports = {
 ```
 </br>
 
-</br>
-
-__完整plugin配置如下：__
+__完整plugin配置如下：__
 ```javascript
 //套件加載
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -483,9 +477,9 @@ module.exports = {
 
 ### 啟用devServer
 
-`webpack-dev-server` 內建支持`--hot`熱模塊模式，每次重新整個頁面之前，熱模式會嘗試使用 HMR 来更新，[更多關於熱模塊](https://webpack.docschina.org/concepts/hot-module-replacement/)。
+`webpack-dev-server` 內建支持`--hot`熱模塊模式，每次重新整個頁面之前，熱模式會嘗試使用 HMR 来更新，[更多關於熱模塊](https://webpack.docschina.org/concepts/hot-module-replacement/)。
 
-devServer用於在開發階段於本機啟用server，[請參閱](https://webpack.docschina.org/configuration/dev-server/)。在package.json中有設定：
+devServer用於在開發階段於本機啟用server，[請參閱](https://webpack.docschina.org/configuration/dev-server/)。在package.json中有設定：
 
 ```javascript
 "scripts": {
@@ -526,7 +520,7 @@ devServer: {
 檔案有異動時，webpack會監聽並重新做bundle動作並且自動重新整理頁面。
 
 * `host`不啟用則預設網址為：http://localhost/
-* 如果`host`有指定IP則訪客可以透過IP連入：http://192.168.1.123/
+* 如果`host`有指定IP則訪客可以透過IP連入：http://192.168.1.123/
 
 </br>
 
@@ -657,17 +651,17 @@ module.exports = {
 ```
 
 
-啟用`devServer`後，webpack的bundle過程中共耗費191ms，並終於顯示頁面瞜～
+啟用`devServer`後，webpack的bundle過程中共耗費191ms，並終於顯示頁面瞜～
 ![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/bundleTime.png)
 
 ![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/bundle.png)
+
+</br>
 </br>
 
 ## 結尾
 
 Webpack為目前主流前端打包工具，儘管Webpack團隊號稱零配置，但如果要做複雜的應用還是要提身本身的前端能力才能做客製化開發。今天的介紹就到這裡，有時間再來分享Webpack的進階的應用:D
-
-***
 
 
 
