@@ -315,9 +315,12 @@ module: {
 npm i -D pluginName
 ```
 </br>
+
 推薦使用的Plugins：
 
-* [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)： 複製或搬移資料夾功能
+</br>
+
+[CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)： 複製或搬移資料夾功能
 
 ```javascript
 //套件加載
@@ -341,7 +344,7 @@ module.exports = {
 ```
 </br>
 
-* [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)： 於Html文檔中自動加載bundle後的檔案（css / js)等等
+[HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)： 於Html文檔中自動加載bundle後的檔案（css / js)等等
 ```javascript
 //套件加載
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -362,7 +365,7 @@ module.exports = {
 ```
 </br>
 
-* [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)： 移除資料夾
+[CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)： 移除資料夾
 
 ```javascript
 //套件加載
@@ -399,7 +402,7 @@ module.exports = {
 ```
 </br>
 
-* [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)： 打包Scss檔案成一隻css檔並透過 HtmlWebpackPlugin加載到Html中
+[MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)： 打包Scss檔案成一隻css檔並透過 HtmlWebpackPlugin加載到Html中
 > 前身為 `ExtractTextPlugin`。Webpack4後不支援，[請參閱](https://webpack.js.org/plugins/mini-css-extract-plugin/)
 
 ```javascript
