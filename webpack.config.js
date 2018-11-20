@@ -1,9 +1,9 @@
-const path = require('path');
 //套件加載
+const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 //設定CleanWebpackPlugin參數
 let cleanFolderInit = {
@@ -116,7 +116,7 @@ module.exports = {
     //監聽指定目錄名稱
     contentBase: path.join(__dirname, './resources/global/'),
     //填入正確IP位置
-    host: '192.168.1.123',
+    // host: '192.168.1.123',
     port: 3000
   }
-};
+}
