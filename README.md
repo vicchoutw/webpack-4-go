@@ -158,6 +158,7 @@ module.exports = {
 ```
 
 </br>
+
 #### output
 
 有輸入`entry`相對就有輸出`output`，定義webpack把bundle後的檔案輸出到的目錄位置
@@ -177,6 +178,7 @@ module.exports = {
 * `path` 輸出目錄的絕對路徑，可搭配`path.resolve()`方法將相對路徑轉為絕對路徑，[請參閱](http://javascript.ruanyifeng.com/nodejs/path.html)
 
 </br>
+
 #### loader
 
 Webpack的處理流程中皆為Javascript語言，非javascript的原始碼無法正確的在bundle階段做使用。Loader主要在於把不同的原始碼作轉換，譬如Scss源碼可透過Sass-loader / Css-loader輸出為css檔案。Loader詳細說明，[請參閱](https://webpack.docschina.org/concepts/loaders/)
@@ -190,7 +192,7 @@ npm i -D style-loader css-loader
 </br>
 使用Loader可以透過下列三種方式：
 
-##### 1. webpack.config.js中設定（推荐）： 
+##### webpack.config.js中設定（推荐）： 
 
 ```javascript
 module.exports = {
@@ -222,7 +224,7 @@ module.exports = {
 
 </br>
 
-##### 2.`import`中寫入指定loader
+##### `import`中寫入指定loader
 ```
 import Styles from 'style-loader!css-loader?modules!./styles.css';
 ```
@@ -233,7 +235,7 @@ import Styles from 'style-loader!css-loader?modules!./styles.css';
 
 </br>
 
-##### 3. CLI: 透過CLI傳遞參數
+##### CLI: 透過CLI傳遞參數
 ```
 webpack --module-bind --module-bind 'css=style-loader!css-loader'
 ```
