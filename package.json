@@ -1,5 +1,5 @@
 {
-  "name": "webpack3-tutorial",
+  "name": "webpack-4-tutorial",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,12 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/vicchoutw/webpack3-go.git"
   },
-  "author": "victor.chou",
+  "author": "Victor.Chou",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vicchoutw/webpack3-go/issues"
+    "url": "https://github.com/vicchoutw/webpack-4-go/issues"
   },
-  "homepage": "https://github.com/vicchoutw/webpack3-go#readme",
+  "homepage": "https://github.com/vicchoutw/webpack-4-go#readme",
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
