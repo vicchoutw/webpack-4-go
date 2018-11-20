@@ -15,7 +15,7 @@ let cleanFolderInit = {
   //配置選項
   options: {
     root: path.resolve('./'),
-    verbose: true,
+    verbose: true
     // exclude: ['*.html']
   }
 }
@@ -42,7 +42,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'eslint-loader',
         options: {
-          emitError: true,
+          emitError: true
         }
       },
       {
@@ -64,7 +64,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
-        ],
+        ]
       }
     ]
   },
@@ -87,7 +87,7 @@ module.exports = {
     //打包Sass檔案，並透過Sass / Css loader最後輸出成css檔
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[id].css'
     }),
     //自動加載css / js檔案並重新建置html檔案
     new HtmlWebpackPlugin({
@@ -97,7 +97,7 @@ module.exports = {
       template: path.resolve(__dirname, './resources/global/index.html'),
       // data: require(`../resource/${env.lang}/${env.name}/${env.name}.json`),
       inject: true
-    }),
+    })
   ],
   //localHost server配置
   devServer: {
@@ -115,6 +115,8 @@ module.exports = {
     watchContentBase: true,
     //監聽指定目錄名稱
     contentBase: path.join(__dirname, './resources/global/'),
+    //填入正確IP位置
+    host: '192.168.1.123',
     port: 3000
   }
 };
