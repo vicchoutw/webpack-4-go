@@ -30,7 +30,7 @@ module.exports = {
   // 輸出位置，filename定義輸出的js檔名
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'build.js'
+    filename: 'js/bundle.js'
   },
   module: {
     //設定每個Loader配置
@@ -86,7 +86,7 @@ module.exports = {
     ]),
     //打包Sass檔案，並透過Sass / Css loader最後輸出成css檔
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '/css/[name].css',
       chunkFilename: '[id].css'
     }),
     //自動加載css / js檔案並重新建置html檔案
