@@ -173,7 +173,7 @@ console.log('test Entry.js!!');
 
 ```
 
-可以看到entry.js中除了可以引用js / css檔案外也能自定義任務，譬如可以在terminal中打印`console.log`
+可以看到entry.js中除了可以引用js / css檔案外也能自定義任務，譬如可以在terminal中打印`console.log`
 
 </br>
 
@@ -314,7 +314,7 @@ module: {
 ```
 npm i -D pluginName
 ```
-</br>
+</br>
 推薦使用的Plugins：
 * [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)： 複製或搬移資料夾功能
 
@@ -338,7 +338,7 @@ module.exports = {
   ]
 }
 ```
-</br>
+</br>
 * [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)： 於Html文檔中自動加載bundle後的檔案（css / js)等等
 ```javascript
 //套件加載
@@ -358,7 +358,7 @@ module.exports = {
   ]
 }
 ```
-</br>
+</br>
 * [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)： 移除資料夾
 
 ```javascript
@@ -394,9 +394,9 @@ module.exports = {
   ]
 }
 ```
-</br>
+</br>
 * [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)： 打包Scss檔案成一隻css檔並透過 HtmlWebpackPlugin加載到Html中
-> 前身為 `ExtractTextPlugin`。Webpack4後不支援，[請參閱](https://webpack.js.org/plugins/mini-css-extract-plugin/)
+> 前身為 `ExtractTextPlugin`。Webpack4後不支援，[請參閱](https://webpack.js.org/plugins/mini-css-extract-plugin/)
 
 ```javascript
 //套件加載
@@ -415,7 +415,7 @@ module.exports = {
   ]
 }
 ```
-</br>
+</br>
 
 __完整plugin配置如下：__
 ```javascript
@@ -651,7 +651,7 @@ module.exports = {
 ```
 
 
-啟用`devServer`後，webpack的bundle過程中共耗費191ms，並終於顯示頁面瞜～
+啟用`devServer`後，webpack的bundle過程中共耗費191ms，並終於顯示頁面瞜～
 ![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/bundleTime.png)
 
 ![image](https://github.com/vicchoutw/webpack-4-go/blob/master/readme/bundle.png)
