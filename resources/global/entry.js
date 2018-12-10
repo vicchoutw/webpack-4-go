@@ -1,9 +1,6 @@
+// require js/scss files you want to bundle
 require('jquery');
+require('./js/a.js');
+require('./js/b.js');
+require('./js/common.js');
 require('./sass/common.scss');
-require('./js/index.js');
-console.log('test Entry.js!!');
-
-function testFunc() {
-  console.log('This is a TEST');
-}
-testFunc();
